@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lukáš Šembera | PPC & Digital Marketing Specialist</title>
     <meta name="description" content="Strategic Reach Without the Stress. Professional ad management across all major networks by Lukáš Šembera.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230000eb'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial,sans-serif' font-weight='bold' font-size='18' fill='white'%3ELŠ%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
@@ -171,26 +172,30 @@
         }
 
         .platforms-label {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--gray);
-            margin-bottom: 10px;
-            font-weight: 500;
+            letter-spacing: 0.2em;
+            color: var(--blue);
+            margin-bottom: 16px;
+            font-weight: 600;
         }
 
-        .platform-list {
-            font-size: 0.82rem;
-            color: var(--gray);
-            font-weight: 300;
-            line-height: 1.8;
-            letter-spacing: 0.02em;
+        .platforms-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
         }
 
-        .platform-list .sep {
-            color: rgba(0, 0, 235, 0.35);
-            margin: 0 8px;
+        .platform-item {
+            font-size: 0.8rem;
             font-weight: 400;
+            color: var(--gray);
+        }
+
+        .platform-sep {
+            color: rgba(0, 0, 235, 0.35);
+            margin: 0 4px;
         }
 
         /* Divider */
@@ -319,9 +324,8 @@
         </p>
 
         <div class="platforms">
-            <p class="platform-list">
-                Google Ads <span class="sep">·</span> Meta Ads <span class="sep">·</span> LinkedIn Ads <span class="sep">·</span> TikTok Ads <span class="sep">·</span> Pinterest Ads <span class="sep">·</span> YouTube <span class="sep">·</span> Seznam <span class="sep">·</span> & more
-            </p>
+            <p class="platforms-label">Platform Specializations</p>
+            <p class="platform-item">Google <span class="platform-sep">·</span> Meta <span class="platform-sep">·</span> TikTok <span class="platform-sep">·</span> Seznam <span class="platform-sep">·</span> YouTube <span class="platform-sep">·</span> Pinterest <span class="platform-sep">·</span> and more</p>
         </div>
 
         <div class="divider"></div>
@@ -345,6 +349,7 @@
 
     <footer>
         <p>© 2025 Lukáš Šembera <span>·</span> IČO: 17760500</p>
+        <p>sembera.lukas@gmail.com</p>
     </footer>
 
 </body>
