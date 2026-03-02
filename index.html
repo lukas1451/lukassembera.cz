@@ -81,6 +81,13 @@
             50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.15); }
         }
 
+        @keyframes shapeFall {
+            0% { top: -40px; opacity: 0; }
+            10% { opacity: 1; }
+            85% { opacity: 1; }
+            100% { top: 105vh; opacity: 0; transform: rotate(360deg); }
+        }
+
         /* Main card */
         .card {
             position: relative;
@@ -317,6 +324,50 @@
 <body>
 
     <div class="glow-orb"></div>
+    <div class="falling-shapes" id="shapes"></div>
+
+    <script>
+        function createShape() {
+            const el = document.createElement('div');
+            const isCircle = Math.random() > 0.5;
+            const size = 8 + Math.random() * 28;
+            const left = Math.random() * 100;
+            const duration = 6 + Math.random() * 8;
+            const delay = Math.random() * 0.5;
+            const opacity = 0.08 + Math.random() * 0.14;
+            const isFilled = Math.random() > 0.4;
+
+            el.style.cssText = `
+                position: fixed;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${left}%;
+                top: -${size + 10}px;
+                border-radius: ${isCircle ? '50%' : '3px'};
+                ${isFilled 
+                    ? `background: rgba(65, 105, 225, ${opacity});` 
+                    : `border: 1.5px solid rgba(65, 105, 225, ${opacity}); background: none;`}
+                pointer-events: none;
+                z-index: 0;
+                animation: shapeFall ${duration}s ${delay}s linear forwards;
+                transform: rotate(${(Math.random() - 0.5) * 180}deg);
+            `;
+
+            document.getElementById('shapes').appendChild(el);
+            setTimeout(() => el.remove(), (duration + delay) * 1000);
+        }
+
+        // Initial burst
+        for (let i = 0; i < 10; i++) {
+            setTimeout(createShape, i * 200);
+        }
+
+        // Continuous spawning
+        setInterval(() => {
+            const count = 1 + Math.floor(Math.random() * 2);
+            for (let i = 0; i < count; i++) createShape();
+        }, 700);
+    </script>
 
     <main class="card">
         <div class="accent-line"></div>
